@@ -1,9 +1,5 @@
 # BPE Tokenizer
 
-A from-scratch implementation of a **Byte-Pair Encoding (BPE) tokenizer** trained and evaluated on the Brown corpus.
-
----
-
 ## Overview
 
 This project covers three tasks:
@@ -11,8 +7,6 @@ This project covers three tasks:
 1. **Data preparation & vocabulary size selection** — loading the Brown corpus, plotting cumulative word coverage, and identifying the minimal vocabulary that covers ≥90% of the text.
 2. **BPE tokenizer implementation** — a fully custom `BPETokenizer` class with `train` and `tokenize` methods.
 3. **Training & analysis** — training the tokenizer at the selected vocabulary size and measuring fertility and token length statistics on 1 000 random sentences.
-
----
 
 ## Repository Structure
 
@@ -22,8 +16,6 @@ This project covers three tasks:
 ├── requirements.txt
 └── README.md
 ```
-
----
 
 ## Tasks
 
@@ -37,8 +29,6 @@ This project covers three tasks:
 **Key findings:**
 - Coverage slows down because the most frequent words (e.g., *the*, *and*) appear thousands of times, while later words are rare and contribute little.
 - This behavior is explained by **Zipf's Law** (word frequency is inversely proportional to rank) and the **Pareto Principle** (~20% of words cover ~80% of text).
-
----
 
 ### Task 2 — BPE Tokenizer Implementation
 
@@ -57,8 +47,6 @@ The `BPETokenizer` class in the notebook implements the full BPE algorithm:
 4. Repeat for `num_merges` iterations.
 5. Apply the learned merge sequence to tokenize new text.
 
----
-
 ### Task 3 — Training & Analysis
 
 Trained with `num_merges=7000` (targeting the 7 354-word vocabulary from Task 1), then evaluated on 1 000 random sentences.
@@ -75,8 +63,6 @@ Original : Sally left her choring to stand beside Dan .
 Tokens   : ['s', 'ally</w>', 'le', 'ft</w>', 'her</w>', 'ch', 'or', 'ing</w>', ...]
 Fertility: 1.89
 ```
-
----
 
 ## Setup
 
@@ -98,9 +84,7 @@ Download the dataset:
 kaggle datasets download nltkdata/brown-corpus
 ```
 
-Then run all cells in `assignment1_tokenization.ipynb`.
-
----
+Then run all cells in `Assignment1.ipynb`.
 
 ## Results Summary
 
